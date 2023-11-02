@@ -27,7 +27,7 @@ public class PersonValidator implements Validator {
     public void validate(@NonNull Object target, @NonNull Errors errors) {
         Person person = (Person) target;
 
-        if(personDao.show(person.getFullName()).isPresent()) {
+        if(person.getId() == 0 && personDao.show(person.getFullName()).isPresent()) {
             errors.rejectValue("fullName", "",
                     "User with this name already exists");
         }

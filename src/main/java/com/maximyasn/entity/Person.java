@@ -25,7 +25,6 @@ public class Person {
 
     @Min(value = 1900, message = "Year can't be less than 1900")
     @Max(value = 2020, message = "Year can't be greater than 2020")
-    @NotEmpty(message = "Year must not be empty")
     private Integer yearOfBirth;
 
     private List<Book> books;
