@@ -10,20 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="467f2237-9c1a-44e3-92eb-25d6ac393ec4" name="Changes" comment="Add basic functions">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/72e9ee2d-e798-40eb-8c3f-029f2a21108d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/72e9ee2d-e798-40eb-8c3f-029f2a21108d.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/72e9ee2d-e798-40eb-8c3f-029f2a21108d/storage_v2/_src_/database/project1.OBh5xA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/72e9ee2d-e798-40eb-8c3f-029f2a21108d/storage_v2/_src_/database/project1.OBh5xA/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/maximyasn/controllers/BooksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/maximyasn/controllers/BooksController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/maximyasn/controllers/PeopleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/maximyasn/controllers/PeopleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/maximyasn/dao/BookDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/maximyasn/dao/BookDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/maximyasn/dao/PersonDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/maximyasn/dao/PersonDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/maximyasn/entity/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/maximyasn/entity/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/maximyasn/entity/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/maximyasn/entity/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/maximyasn/util/BookValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/maximyasn/util/BookValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/maximyasn/util/PersonValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/maximyasn/util/PersonValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/new.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,8 +23,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -63,30 +52,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;task1&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;4d70254b3a8e2bc38b6147fa6ee813be&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "library-correction",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "spring.configuration.checksum": "4d70254b3a8e2bc38b6147fa6ee813be",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ],
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
+      "PostgreSQL"
     ]
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Tomcat 10.1.10" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.10" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />

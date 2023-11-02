@@ -54,7 +54,7 @@ public class PersonDao {
 
     public List<Book> getPersonBooks(int person_id) {
         return jdbcTemplate
-                .query("select b.* from project1.public.book b join project1.public.person p on b.person_id = p.id where b.person_id = ?",
-                        new BeanPropertyRowMapper<>(Book.class), person_id).stream().toList();
+                .query("select * from project1.public.book where person_id=?",
+                        new BeanPropertyRowMapper<>(Book.class), person_id);
     }
 }
