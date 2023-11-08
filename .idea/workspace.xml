@@ -9,20 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d17c4b60-9026-47a4-9be7-49c884ea62b7" name="Changes" comment="Add some features">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/72e9ee2d-e798-40eb-8c3f-029f2a21108d.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/maximyasn/config/SpringConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/maximyasn/config/SpringConfig.java" afterDir="false" />
+    <list default="true" id="d17c4b60-9026-47a4-9be7-49c884ea62b7" name="Changes" comment="Rebase app to spring data jpa">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/maximyasn/controllers/BooksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/maximyasn/controllers/BooksController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/maximyasn/controllers/PeopleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/maximyasn/controllers/PeopleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/maximyasn/dao/BookDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/maximyasn/dao/BookDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/maximyasn/dao/PersonDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/maximyasn/dao/PersonDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/maximyasn/entity/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/maximyasn/entity/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/maximyasn/entity/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/maximyasn/entity/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/maximyasn/util/BookValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/maximyasn/util/BookValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/maximyasn/util/PersonValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/maximyasn/util/PersonValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/database.properties.origin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/maximyasn/repositories/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/maximyasn/repositories/BookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/maximyasn/services/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/maximyasn/services/BookService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +25,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -63,6 +55,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
@@ -180,11 +173,32 @@
       <workItem from="1698958689983" duration="542000" />
       <workItem from="1698960464875" duration="929000" />
       <workItem from="1699434194597" duration="6805000" />
-      <workItem from="1699442628045" duration="1859000" />
+      <workItem from="1699442628045" duration="6503000" />
     </task>
+    <task id="LOCAL-00001" summary="Rebase app to spring data jpa">
+      <option name="closed" value="true" />
+      <created>1699458068776</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1699458068776</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Rebase app to spring data jpa">
+      <option name="closed" value="true" />
+      <created>1699458109264</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1699458109264</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Rebase app to spring data jpa" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rebase app to spring data jpa" />
   </component>
 </project>

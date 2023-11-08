@@ -71,4 +71,7 @@ public class BookService {
         bookRepository.releaseBookByBookId(bookId);
     }
 
+    public List<Book> findBooksByNamePrefix(String prefix) {
+        return bookRepository.findBookByNameStartingWith(prefix);
+    }
 }

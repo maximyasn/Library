@@ -12,6 +12,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -106,6 +107,18 @@ public class BooksController {
         bookService.delete(id);
 
         return "redirect:/books";
+    }
+
+    @GetMapping("/search")
+    public String search() {
+        return "books/search";
+    }
+
+    @GetMapping("/search-for")
+    public String checkForBooksSearch(@RequestParam("prefix") String prefix, Model model) {
+        List<Book> checkedBooks = bookService.findBooksByNamePrefix(prefix);
+        model.addAttribute("checkedBooks", checkedBooks);
+        return "books/search";
     }
 
 }
