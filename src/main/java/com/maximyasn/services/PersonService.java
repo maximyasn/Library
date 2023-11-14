@@ -2,14 +2,15 @@ package com.maximyasn.services;
 
 import com.maximyasn.entity.Book;
 import com.maximyasn.entity.Person;
-import com.maximyasn.repositories.BookRepository;
 import com.maximyasn.repositories.PersonRepository;
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,12 +19,10 @@ import java.util.Optional;
 public class PersonService {
 
     private final PersonRepository personRepository;
-    private final BookRepository bookRepository;
 
     @Autowired
-    public PersonService(PersonRepository personRepository, BookRepository bookRepository) {
+    public PersonService(PersonRepository personRepository) {
         this.personRepository = personRepository;
-        this.bookRepository = bookRepository;
     }
 
     @Transactional
@@ -37,6 +36,7 @@ public class PersonService {
         personRepository.save(person);
     }
 
+    @Transactional
     public void delete(int id) {
         personRepository.deleteById(id);
     }
@@ -54,18 +54,21 @@ public class PersonService {
         return personRepository.findByFullName(name);
     }
 
-    public List<Book> getPersonBooks(Person person) {
-        return bookRepository.findByPerson(person);
+    public List<Book> getPersonBooks(int id) {
+        Optional<Person> person = personRepository.findById(id);
+
+        if(person.isPresent()) {
+            Hibernate.initialize(person.get().getBooks());
+
+            person.get().getBooks().forEach(book -> {
+                long diffInMillis = Duration.between(book.getPickUpTime(), LocalDateTime.now()).toMillis();
+                if(diffInMillis > 864000000)
+                    book.setOverdue(true);
+            });
+
+            return person.get().getBooks();
+        }
+        return Collections.emptyList();
     }
 
-    public void setOverdueToBook(Book book) {
-        LocalDateTime pickUpDate = bookRepository.getBookPickUpTime(book.getId());
-        if (pickUpDate != null) {
-            Duration duration = Duration.between(pickUpDate, LocalDateTime.now());
-            long durationOfDays = duration.toDays();
-            if (durationOfDays > 10) {
-                book.setOverdue(true);
-            }
-        }
-    }
 }
