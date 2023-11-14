@@ -3,9 +3,17 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.49">
     <root id="1">
       <DateStyle>mdy</DateStyle>
-      <IntrospectionStateNumber>3227</IntrospectionStateNumber>
+      <Grants>1||-9223372036854775808|c|G
+1||10|c|G
+1||10|C|G
+1||10|T|G
+4||-9223372036854775808|c|G
+4||10|c|G
+4||10|C|G
+4||10|T|G</Grants>
+      <IntrospectionStateNumber>3248</IntrospectionStateNumber>
       <ServerVersion>15.3</ServerVersion>
-      <StartupTime>1699434754</StartupTime>
+      <StartupTime>1699969843</StartupTime>
       <TimeZones>true ACDT
 true ACSST
 false ACST
@@ -1389,22 +1397,22 @@ false posix/Zulu
 false posixrules
 </TimeZones>
     </root>
-    <database id="2" parent="1" name="first_db">
-      <ObjectId>17657</ObjectId>
-      <OwnerName>maximyasn</OwnerName>
-    </database>
-    <database id="3" parent="1" name="hibernate_demo_db">
-      <ObjectId>17993</ObjectId>
-      <OwnerName>maximyasn</OwnerName>
-    </database>
-    <database id="4" parent="1" name="maximyasn">
-      <ObjectId>16384</ObjectId>
-      <OwnerName>maximyasn</OwnerName>
-    </database>
-    <database id="5" parent="1" name="postgres">
+    <database id="2" parent="1" name="postgres">
       <Comment>default administrative connection database</Comment>
       <Current>1</Current>
       <ObjectId>5</ObjectId>
+      <OwnerName>maximyasn</OwnerName>
+    </database>
+    <database id="3" parent="1" name="maximyasn">
+      <ObjectId>16384</ObjectId>
+      <OwnerName>maximyasn</OwnerName>
+    </database>
+    <database id="4" parent="1" name="wallet_service_database">
+      <ObjectId>16390</ObjectId>
+      <OwnerName>maximyasn</OwnerName>
+    </database>
+    <database id="5" parent="1" name="first_db">
+      <ObjectId>17657</ObjectId>
       <OwnerName>maximyasn</OwnerName>
     </database>
     <database id="6" parent="1" name="project1">
@@ -1417,12 +1425,12 @@ false posixrules
 13209||10|C|G
 13209||-9223372036854775808|U|G
 13209||10|U|G</Grants>
-      <IntrospectionStateNumber>3228</IntrospectionStateNumber>
+      <IntrospectionStateNumber>3248</IntrospectionStateNumber>
       <ObjectId>17865</ObjectId>
       <OwnerName>maximyasn</OwnerName>
     </database>
-    <database id="7" parent="1" name="wallet_service_database">
-      <ObjectId>16390</ObjectId>
+    <database id="7" parent="1" name="hibernate_demo_db">
+      <ObjectId>17993</ObjectId>
       <OwnerName>maximyasn</OwnerName>
     </database>
     <role id="8" parent="1" name="maximyasn">
@@ -4834,9 +4842,9 @@ false posixrules
     <schema id="266" parent="6" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>3228</IntrospectionStateNumber>
-      <IntrospectionTimestamp>2023-11-08.14:25:27.746</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-11-08.11:25:28</LocalIntrospectionTimestamp>
+      <IntrospectionStateNumber>3248</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2023-11-14.16:50:51.608</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2023-11-14.13:50:53</LocalIntrospectionTimestamp>
       <ObjectId>2200</ObjectId>
       <StateNumber>518</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
@@ -4844,7 +4852,7 @@ false posixrules
     <sequence id="267" parent="266" name="book_id_seq">
       <DasType>integer|0s</DasType>
       <ObjectId>17980</ObjectId>
-      <SequenceIdentity>1(6)</SequenceIdentity>
+      <SequenceIdentity>1(9)</SequenceIdentity>
       <StartValue>1</StartValue>
       <StateNumber>2989</StateNumber>
       <OwnerName>maximyasn</OwnerName>
@@ -4852,14 +4860,14 @@ false posixrules
     <sequence id="268" parent="266" name="person_id_seq">
       <DasType>integer|0s</DasType>
       <ObjectId>17971</ObjectId>
-      <SequenceIdentity>1(6)</SequenceIdentity>
+      <SequenceIdentity>1(7)</SequenceIdentity>
       <StartValue>1</StartValue>
       <StateNumber>2987</StateNumber>
       <OwnerName>maximyasn</OwnerName>
     </sequence>
     <table id="269" parent="266" name="book">
       <ObjectId>17981</ObjectId>
-      <StateNumber>2989</StateNumber>
+      <StateNumber>3239</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>maximyasn</OwnerName>
     </table>
@@ -4905,7 +4913,13 @@ false posixrules
       <StateNumber>2989</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="276" parent="269" name="book_person_id_fkey">
+    <column id="276" parent="269" name="pick_up_time">
+      <DasType>timestamp|0s</DasType>
+      <Position>6</Position>
+      <StateNumber>3239</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <foreign-key id="277" parent="269" name="book_person_id_fkey">
       <ColNames>person_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>17988</ObjectId>
@@ -4914,7 +4928,7 @@ false posixrules
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>17972</RefTableId>
     </foreign-key>
-    <index id="277" parent="269" name="book_pkey">
+    <index id="278" parent="269" name="book_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>17984</ObjectId>
@@ -4923,7 +4937,7 @@ false posixrules
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="278" parent="269" name="book_name_key">
+    <index id="279" parent="269" name="book_name_key">
       <ColNames>name</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>17986</ObjectId>
@@ -4934,26 +4948,26 @@ false posixrules
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <key id="279" parent="269" name="book_pkey">
+    <key id="280" parent="269" name="book_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>17985</ObjectId>
       <Primary>1</Primary>
       <StateNumber>2989</StateNumber>
       <UnderlyingIndexId>17984</UnderlyingIndexId>
     </key>
-    <key id="280" parent="269" name="book_name_key">
+    <key id="281" parent="269" name="book_name_key">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>17987</ObjectId>
       <StateNumber>2989</StateNumber>
       <UnderlyingIndexId>17986</UnderlyingIndexId>
     </key>
-    <check id="281" parent="270" name="person_year_of_birth_check">
+    <check id="282" parent="270" name="person_year_of_birth_check">
       <ColNames>year_of_birth</ColNames>
       <ObjectId>17975</ObjectId>
       <Predicate>(year_of_birth &gt; 1900) AND (year_of_birth &lt; 2020)</Predicate>
       <StateNumber>2987</StateNumber>
     </check>
-    <column id="282" parent="270" name="id">
+    <column id="283" parent="270" name="id">
       <DasType>integer|0s</DasType>
       <IdentityKind>by-default</IdentityKind>
       <NotNull>1</NotNull>
@@ -4962,21 +4976,21 @@ false posixrules
       <SequenceId>17971</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="283" parent="270" name="full_name">
+    <column id="284" parent="270" name="full_name">
       <DasType>varchar(100)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>2987</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="284" parent="270" name="year_of_birth">
+    <column id="285" parent="270" name="year_of_birth">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>2987</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="285" parent="270" name="person_pkey">
+    <index id="286" parent="270" name="person_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>17976</ObjectId>
@@ -4985,7 +4999,7 @@ false posixrules
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="286" parent="270" name="person_full_name_key">
+    <index id="287" parent="270" name="person_full_name_key">
       <ColNames>full_name</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>17978</ObjectId>
@@ -4996,14 +5010,14 @@ false posixrules
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <key id="287" parent="270" name="person_pkey">
+    <key id="288" parent="270" name="person_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>17977</ObjectId>
       <Primary>1</Primary>
       <StateNumber>2987</StateNumber>
       <UnderlyingIndexId>17976</UnderlyingIndexId>
     </key>
-    <key id="288" parent="270" name="person_full_name_key">
+    <key id="289" parent="270" name="person_full_name_key">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>17979</ObjectId>
       <StateNumber>2987</StateNumber>

@@ -75,6 +75,8 @@ public class PeopleController {
     public String show(@PathVariable("id") int id, Model model) {
         Person person = personService.findById(id);
         List<Book> books = personService.getPersonBooks(person);
+        books.forEach(personService::setOverdueToBook);
+
         model.addAttribute("books", books);
         model.addAttribute("person", person);
         return "people/show";

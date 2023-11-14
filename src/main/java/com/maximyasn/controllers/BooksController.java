@@ -6,6 +6,8 @@ import com.maximyasn.services.BookService;
 import com.maximyasn.util.BookValidator;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -30,8 +32,14 @@ public class BooksController {
     }
 
     @GetMapping()
-    public String index(Model model) {
-        model.addAttribute("books", bookService.findAll());
+    public String index(@RequestParam(value = "page", required = false) Integer page,
+                        @RequestParam(value = "books_per_page", required = false) Integer books_per_page,
+                        @RequestParam(value = "sort_by_age", required = false) Boolean sortByAge,
+                        Model model) {
+
+        List<Book> books = bookService.findAll();
+
+        model.addAttribute("books", books);
         return "books/index";
     }
 

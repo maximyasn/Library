@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.Duration;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,6 +25,7 @@ public class PersonService {
         this.personRepository = personRepository;
         this.bookRepository = bookRepository;
     }
+
     @Transactional
     public void save(Person person) {
         personRepository.save(person);
@@ -53,5 +56,16 @@ public class PersonService {
 
     public List<Book> getPersonBooks(Person person) {
         return bookRepository.findByPerson(person);
+    }
+
+    public void setOverdueToBook(Book book) {
+        LocalDateTime pickUpDate = bookRepository.getBookPickUpTime(book.getId());
+        if (pickUpDate != null) {
+            Duration duration = Duration.between(pickUpDate, LocalDateTime.now());
+            long durationOfDays = duration.toDays();
+            if (durationOfDays > 10) {
+                book.setOverdue(true);
+            }
+        }
     }
 }

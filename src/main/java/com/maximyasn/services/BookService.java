@@ -5,6 +5,9 @@ import com.maximyasn.entity.Person;
 import com.maximyasn.repositories.BookRepository;
 import com.maximyasn.repositories.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -73,5 +76,9 @@ public class BookService {
 
     public List<Book> findBooksByNamePrefix(String prefix) {
         return bookRepository.findBookByNameStartingWith(prefix);
+    }
+
+    public Page<Book> findAllPaging(Pageable pageable) {
+        return bookRepository.findAll(pageable);
     }
 }

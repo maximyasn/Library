@@ -10,16 +10,17 @@
 <br/>
 <hr/>
 <br/>
-    <div th:if="${books.isEmpty()}">
-        <span>Человек пока не взял ни одной книги.</span>
-    </div>
-    <div th:unless="${books.isEmpty()}">
-        <span><strong>Книги: </strong></span>
-        <p th:each="book : ${books}"
-              th:text="${book.getName() + ', ' + book.getAuthor() + ', ' + book.getYear()}">
-        </p>
-    </div>
+<div th:if="${books.isEmpty()}">
+    <span>Человек пока не взял ни одной книги.</span>
+</div>
+<div th:unless="${books.isEmpty()}">
+    <span><strong>Книги: </strong></span>
+    <p th:each="book : ${books}"
+       th:text="${book.getName() + ', ' + book.getAuthor() + ', ' + book.getYear()}"
+        th:style="${book.isOverdue()}? 'color:red;'">
+    </p>
 <hr/>
+</div>
 <br/>
 <a th:href="@{/people/{id}/edit(id=${person.getId()})}">Редактировать</a>
 <form th:method="delete" th:action="@{/people/{id}(id=${person.getId()})}">
