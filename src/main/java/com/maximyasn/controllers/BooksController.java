@@ -3,11 +3,10 @@ package com.maximyasn.controllers;
 import com.maximyasn.entity.Book;
 import com.maximyasn.entity.Person;
 import com.maximyasn.services.BookService;
+import com.maximyasn.services.PersonService;
 import com.maximyasn.util.BookValidator;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 
 
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 @RequestMapping("/books")
@@ -23,23 +21,29 @@ public class BooksController {
 
     private final BookService bookService;
 
+    private final PersonService personService;
+
     private final BookValidator bookValidator;
 
     @Autowired
-    public BooksController(BookService bookService, BookValidator bookValidator) {
+    public BooksController(BookService bookService, PersonService personService, BookValidator bookValidator) {
         this.bookService = bookService;
+        this.personService = personService;
         this.bookValidator = bookValidator;
     }
 
     @GetMapping()
     public String index(@RequestParam(value = "page", required = false) Integer page,
                         @RequestParam(value = "books_per_page", required = false) Integer books_per_page,
-                        @RequestParam(value = "sort_by_age", required = false) Boolean sortByAge,
+                        @RequestParam(value = "sort_by_age", required = false) boolean sortByYear,
                         Model model) {
 
-        List<Book> books = bookService.findAll();
+        if(page == null || books_per_page == null) {
+            model.addAttribute("books", bookService.findAll(sortByYear));
+        } else {
+            model.addAttribute("books", bookService.findWithPagination(page, books_per_page, sortByYear));
+        }
 
-        model.addAttribute("books", books);
         return "books/index";
     }
 
@@ -86,11 +90,11 @@ public class BooksController {
     @GetMapping("/{id}")
     public String show(@PathVariable("id") int id, @ModelAttribute("person") Person person, Model model) {
         model.addAttribute("book", bookService.findById(id));
-        Optional<Person> owner = bookService.getOwner(id);
-        if(owner.isPresent()) {
-            model.addAttribute("owner", owner.get());
+        Person owner = bookService.getOwner(id);
+        if(owner != null) {
+            model.addAttribute("owner", owner);
         } else {
-            model.addAttribute("personList", bookService.getPersonList());
+            model.addAttribute("personList", personService.findAll());
         }
         return "books/show";
     }
@@ -98,7 +102,6 @@ public class BooksController {
     @PatchMapping("/{id}/set-person")
     public String setPerson(@PathVariable("id") int id,
                             @ModelAttribute("person") Person person) {
-        System.out.println(person);
         bookService.setPersonById(id, person);
         return "redirect:/books/" + id;
     }
