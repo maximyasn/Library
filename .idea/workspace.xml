@@ -10,21 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d17c4b60-9026-47a4-9be7-49c884ea62b7" name="Changes" comment="Add search func">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6ae2a343-8080-4902-b035-b61b516592c4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6ae2a343-8080-4902-b035-b61b516592c4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6ae2a343-8080-4902-b035-b61b516592c4/storage_v2/_src_/database/project1.OBh5xA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6ae2a343-8080-4902-b035-b61b516592c4/storage_v2/_src_/database/project1.OBh5xA/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_11_2023,_21_43_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_11_2023__21_43__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/maximyasn/controllers/BooksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/maximyasn/controllers/BooksController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/maximyasn/controllers/PeopleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/maximyasn/controllers/PeopleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/maximyasn/entity/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/maximyasn/entity/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/maximyasn/repositories/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/maximyasn/repositories/BookRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/maximyasn/repositories/PersonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/maximyasn/repositories/PersonRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/maximyasn/services/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/maximyasn/services/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/maximyasn/services/PersonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/maximyasn/services/PersonService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sql/project1_db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sql/project1_db.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/show.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +171,7 @@
       <workItem from="1698960464875" duration="929000" />
       <workItem from="1699434194597" duration="6805000" />
       <workItem from="1699442628045" duration="15140000" />
-      <workItem from="1699966443331" duration="3364000" />
+      <workItem from="1699966443331" duration="4119000" />
     </task>
     <task id="LOCAL-00001" summary="Rebase app to spring data jpa">
       <option name="closed" value="true" />
