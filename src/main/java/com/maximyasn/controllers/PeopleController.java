@@ -74,8 +74,7 @@ public class PeopleController {
     @GetMapping("/{id}")
     public String show(@PathVariable("id") int id, Model model) {
         Person person = personService.findById(id);
-        List<Book> books = personService.getPersonBooks(person);
-        books.forEach(personService::setOverdueToBook);
+        List<Book> books = personService.getPersonBooks(id);
 
         model.addAttribute("books", books);
         model.addAttribute("person", person);
