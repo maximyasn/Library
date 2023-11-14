@@ -15,7 +15,8 @@
         <label for="year">Введите новый год издания: </label>
         <input type="text" th:field="*{year}" id="year">
         <div style="color: red" th:if="${#fields.hasErrors('year')}" th:errors="*{year}">Year error</div>
+        <br/>
+        <input type="submit" value="Редактировать">
     </form>
-<input type="submit" value="Редактировать">
 </body>
 </html>

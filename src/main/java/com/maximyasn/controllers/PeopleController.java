@@ -1,8 +1,8 @@
 package com.maximyasn.controllers;
 
-import com.maximyasn.dao.PersonDao;
 import com.maximyasn.entity.Book;
 import com.maximyasn.entity.Person;
+import com.maximyasn.services.PersonService;
 import com.maximyasn.util.PersonValidator;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,19 +17,19 @@ import java.util.List;
 @RequestMapping("/people")
 public class PeopleController {
 
-    private final PersonDao personDao;
+    private final PersonService personService;
 
     private final PersonValidator personValidator;
 
     @Autowired
-    public PeopleController(PersonDao personDao, PersonValidator personValidator) {
-        this.personDao = personDao;
+    public PeopleController(PersonService personService, PersonValidator personValidator) {
+        this.personService = personService;
         this.personValidator = personValidator;
     }
 
     @GetMapping()
     public String index(Model model) {
-        model.addAttribute("people", personDao.index());
+        model.addAttribute("people", personService.findAll());
         return "people/index";
     }
 
@@ -48,13 +48,13 @@ public class PeopleController {
             return "people/new";
         }
 
-        personDao.save(person);
+        personService.save(person);
         return "redirect:/people";
     }
 
     @GetMapping("/{id}/edit")
     public String edit(@PathVariable("id") int id, Model model) {
-        model.addAttribute("person", personDao.show(id));
+        model.addAttribute("person", personService.findById(id));
         return "people/edit";
     }
 
@@ -66,22 +66,25 @@ public class PeopleController {
         if(bindingResult.hasErrors()) {
             return "people/edit";
         }
-        personDao.update(id, person);
+        personService.update(id, person);
         return "redirect:/people";
     }
 
 
     @GetMapping("/{id}")
     public String show(@PathVariable("id") int id, Model model) {
-        List<Book> books = personDao.getPersonBooks(id);
+        Person person = personService.findById(id);
+        List<Book> books = personService.getPersonBooks(person);
+        books.forEach(personService::setOverdueToBook);
+
         model.addAttribute("books", books);
-        model.addAttribute("person", personDao.show(id));
+        model.addAttribute("person", person);
         return "people/show";
     }
 
     @DeleteMapping("/{id}")
     public String delete(@PathVariable("id") int id) {
-        personDao.delete(id);
+        personService.delete(id);
         return "redirect:/people";
     }
 }
